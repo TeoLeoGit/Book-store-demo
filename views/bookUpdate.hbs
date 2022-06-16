@@ -1,0 +1,102 @@
+<!-- Page Content -->
+ <div class="container">
+                <div class="row">
+                  <!-- Info column -->
+                  <div class="col-lg-4">
+                    <div class="card" >
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div  id="productName" class="col">Name</div>
+                                    <div  class="col" style="text-align: left;">
+                                        {{book.name}}
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div  id="writers" class="col">Writers</div>
+                                    <div  class="col" style="text-align: left;">
+                                        {{#each book.writers}} 
+                                            {{this}} <br>
+                                        {{/each}} 
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div  id="price" class="col">Price</div>
+                                    <div  class="col" style="text-align: left;">
+                                        {{book.price}}
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div  id="types" class="col">Types</div>
+                                    <div  class="col" style="text-align: left;">
+                                        {{#each book.types}} 
+                                            {{this}} <br>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div  id="publisher" class="col">Publisher</div>
+                                    <div  class="col" style="text-align: left;">
+                                        {{book.publisher}}
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div  id="stock" class="col">Stock</div>
+                                    <div  class="col" style="text-align: left;">
+                                        {{book.stock}}
+                                    </div>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                      </div>
+                  </div>
+                  <!-- Change setting form -->
+                  <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/books/detail?_id={{book._id}}" method="POST"> 
+                                <div class="row">
+                                  <div class="form-group col-md-6">
+                                    <label for="productName">Name</label>
+                                    <input type="text" class="form-control" id="productName" name="name" placeholder="{{book.name}}">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="productWriters">Writers</label>
+                                    <input type="text" class="form-control" id="productWriters" name="writers">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="productPrice">Price</label>
+                                    <input type="number" step="0.01" class="form-control" id="iproductPrice" name="price" placeholder="{{book.price}}">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="productTypes">Types</label>
+                                    <input type="text" class="form-control" id="productTypes" name="types">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="publisher">Publisher</label>
+                                    <input type="text" class="form-control" id="publisher" name="publisher" placeholder="{{book.publisher}}">
+                                  </div>
+                                  <div class="form-group col-md-6">
+                                    <label for="productStock">Stock</label>
+                                    <input type="number" step="1" class="form-control" id="productStock" name="stock" placeholder="{{book.stock}}">
+                                  </div>
+                                </div>                                                       
+                                <button type="submit" name="_id" value="{{book._id}}" class="btn btn-primary btn-submit">Save change</button>
+                              </form>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+<!-- End of page content -->
